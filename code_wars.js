@@ -115,19 +115,41 @@ console.log(" \n \n");
 
 // READ (array of obj to array of html) 
 
+const arrayToHTML = (array) => {
+  html = array.map((item) =>{
+  let str = `<a>${item.name} is $${item.price}.00 and is ${item.about}</a>`;
+  return str;
+  });
+return html;
+}
+console.log("Crud - Read");
+console.log(arrayToHTML(tacos));
+console.log(" \n \n");
+
 // Update (update a taco) 
 const updateTaco = (tacoID, tacoUpdated) => {
-  return tacos.map((taco) => (taco.id == tacoID ? tacoUpdated : taco ))
-}
-const taco3 = {id:4, name:'Pulled Carnitas', price:28, about:'Yummers'}
-let updateTacoArray = updateTaco(2,taco3)
-console.log("Crud - Update\n changing Taco2 infor to taco3")
-console.log(taco3)
-console.log(updateTacoArray)
+  return tacos.map((taco) => (taco.id == tacoID ? tacoUpdated : taco ));
+};
+const taco3 = {id:4, name:'Pulled Carnitas', price:28, about:'Yummers'};
+let updateTacoArray = updateTaco(2,taco3);
+console.log("Crud - Update\n changing Taco2 infor to taco3");
+console.log(taco3);
+console.log(updateTacoArray);
 console.log(" \n \n");
 
 
 // Remove (delete a taco) 
+
+const deleteTaco = (tacoID) => {
+  return tacos.filter((taco) =>{
+    return taco.id !==tacoID;
+  });
+};
+console.log("Crud - Delete\n removing Taco3");
+delTaco = deleteTaco(3)
+console.log(delTaco)
+console.log(" \n \n");
+
 
 // Create (add a taco) 
 
